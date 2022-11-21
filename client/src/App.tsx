@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { Folder } from "./componens/Folder";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { ActionProps, useAction } from "./context/ActionProvider";
 
 export type FolderProps = {

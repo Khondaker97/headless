@@ -22,7 +22,7 @@ export const Folder: FC<FolderProps | any> = ({ folder }) => {
   const hasChild = folder?.children?.length > 0 ? true : false;
 
   const handleClick = async (id: string) => {
-    if (hasChild) {
+    if (!children.length && hasChild) {
       try {
         setLoading(true);
         const response = await fetch(`http://localhost:5000/api/folders/${id}`);

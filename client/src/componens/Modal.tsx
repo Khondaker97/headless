@@ -56,9 +56,10 @@ const Modal = ({
       const response = await fetch(`http://localhost:5000/api/folders/${id}`, {
         method: "DELETE",
       });
-      await response.json();
-
-      toast.info("Folder Deleted!");
+      const result = await response.json();
+      if (result) {
+        toast.warn("Deleted!");
+      }
       setActionTaken((prev: boolean) => !prev);
     } catch (error) {
       console.log(error);
